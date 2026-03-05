@@ -8,7 +8,9 @@ public class Main {
     }
 
     private static int threeXPlusOne(int x) {
-        return 0;
+        if (x == 1) return 0;
+        else if (x % 2 == 0) return threeXPlusOne(x / 2) + 1;
+        else return threeXPlusOne(3 * x + 1) + 1;
     }
 
 }

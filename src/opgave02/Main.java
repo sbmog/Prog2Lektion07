@@ -9,7 +9,13 @@ public class Main {
         System.out.println("Er " + notPalindrom + " et palindrom? " + isPalindrom(notPalindrom));
     }
 
-    private static boolean isPalindrom(String palindrom) {
-        return true;
+    private static boolean isPalindrom(String text) {
+        return palindromHelper(text, 0, text.length() - 1);
+    }
+
+    private static boolean palindromHelper(String text, int left, int right) {
+        if (left >= right) return true;
+        if (text.charAt(left) != text.charAt(right)) return false;
+        return palindromHelper(text, left + 1, right - 1);
     }
 }
